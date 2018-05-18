@@ -1,10 +1,11 @@
 #!/bin/bash
+#mysql数据库备份
 DATE=$(date +%F_%H-%M-%S)
-HOST=192.168.1.120
-DB=test
-USER=bak
-PASS=123456
-MAIL="zhangsan@example.com lisi@example.com"
+HOST=192.168.1.120  #MySQL的主机ip
+DB=test	#数据库名
+USER=bak  #数据库用户名
+PASS=123456	#数据库密码
+MAIL="zhangsan@example.com lisi@example.com"  #收取邮箱的地址
 BACKUP_DIR=/data/db_backup
 SQL_FILE=${DB}_full_$DATE.sql
 BAK_FILE=${DB}_full_$DATE.zip

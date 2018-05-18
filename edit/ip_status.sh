@@ -1,4 +1,5 @@
-#!/bin/bash  
+#!/bin/bash 
+#批量判断ip状态，是否能连接 
 IP_LIST="192.168.18.1 192.168.1.1 192.168.18.2"
 for IP in $IP_LIST; do
     NUM=1

@@ -1,4 +1,5 @@
 #!/bin/bash  
+#检查mysql主从是否同步
 USER=bak
 PASSWD=123456
 IO_SQL_STATUS=$(mysql -u$USER -p$PASSWD -e 'show slave status\G' |awk -F: '/Slave_.*_Running/{gsub(": ",":");print $0}')  #gsub去除冒号后面的空格

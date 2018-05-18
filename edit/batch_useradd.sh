@@ -1,4 +1,5 @@
 #!/bin/bash
+##批量添加用户
 DATE=$(date +%F_%T)
 USER_FILE=user.txt
 echo_color(){

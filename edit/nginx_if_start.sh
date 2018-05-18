@@ -1,4 +1,5 @@
 #!/bin/bash
+#检查nginx是否启动
 # Description: Only support RedHat system
 . /etc/init.d/functions
 WORD_DIR=/data/project/nginx1.10
