@@ -7,8 +7,6 @@ mysqld_pid_file_path="/application/mysql/`hostname`.pid"
 PATH="/sbin:/usr/sbin:/bin:/usr/bin:$basedir/bin" #此步对开机启动及定时启动及其关键。
 export PATH
 return_value=0
-
-
 # Lock directory.
 lockdir='/var/lock/subsys'
 lock_file_path="$lockdir/mysql"

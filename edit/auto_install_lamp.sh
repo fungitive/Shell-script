@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 ###########################################################################################
 #Httpd define path variable
-H_FILES=httpd-2.4.29.tar.gz
-H_FILES_DIR=httpd-2.4.29
+H_FILES='httpd-2.4.29.tar.gz'
+H_FILES_DIR='httpd-2.4.29'
 H_URL='http://mirror.bit.edu.cn/apache/httpd/'
 H_PREFIX='/usr/local/apache'
 ###########################################################################################
 #Mysql define path variable
-M_FILES='mysql-cluster-gpl-7.2.27.tar.gz'
-M_FILES_DIR='mysql-cluster-gpl-7.2.27'
-M_URL='http://mirrors.sohu.com/mysql/MySQL-Cluster-7.2/'
+M_FILES='mysql-test-5.7.22-el7-x86_64.tar.gz'
+M_FILES_DIR='mysql-test-5.7.22-el7-x86_64'
+M_URL='https://dev.mysql.com/get/Downloads/MySQL-5.7/'
 M_PREFIX='/usr/local/mysql'
 ###########################################################################################
 #Php define path variable
@@ -101,7 +101,7 @@ fi
 ###########################################################################################
 #Define PS3
 PS3="Please Enter Your choose: "
-select i in'Yum install Environment' 'Install Apache' 'Install Mysql' 'Configure Mysql' 'Install Php' 'Integrate Php and Mysql' 'Automatic Install LAMP' 'Configure Discuz' 'Automatic Install ALL' 'Exit'
+select i in 'Yum install Environment' 'Install Apache' 'Install Mysql' 'Configure Mysql' 'Install Php' 'Integrate Php and Mysql' 'Automatic Install LAMP' 'Configure Discuz' 'Automatic Install ALL' 'Exit'
 do
 CHOOSE=$REPLY
 case $CHOOSE in

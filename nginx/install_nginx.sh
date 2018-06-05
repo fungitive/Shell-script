@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 echo -e '\e[31mInstallation tools and dependencies\e[0m'
-yum install -y wget make cmake gcc gcc-c++ && \
-pcre-devel lib zlib-devel && \
-openssl openssl-devel
+yum install -y wget make cmake gcc gcc-c++  &&\
+yum install -y pcre-devel lib zlib-devel  \
+    openssl openssl-devel
 if [ $? -eq 0 ];then
     echo -e '\e[32mSuccessful!\e[0m'
 else
