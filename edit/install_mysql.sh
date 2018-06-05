@@ -1,9 +1,11 @@
 #!/bin/sh
+#卸载MariaDB
+yum remove mariadb-libs -y
 # install Environment with yum
 yum -y install make cmake bison-devel ncurses-devel gcc gcc-c++ kernel-devel &&\
 yum install -y readline-devel pcre-devel openssl-devel openssl zlib zlib-devel pcre-devel  perl perl-devel wget
-wget -c https://cdn.mysql.com/archives/mysql-5.7/mysql-boost-5.7.21.tar.gz &&\
-tar -zxvf mysql-boost-5.7.21.tar.gz && rm -f mysql-boost-5.7.21.tar.gz && cd mysql-boost-5.7.21 &&\
+wget -c https://cdn.mysql.com/archives/mysql-5.7/mysql-5.7.22.tar.gz &&\
+tar -zxvf mysql-5.7.22.tar.gz && rm -f mysql-5.7.22.tar.gz && cd mysql-5.7.22 &&\
 #make datadir ,homedir and backupdir
 mkdir -p /home/mysql/data  /usr/local/mysql /backup
 # add groupuser and user of mysql
@@ -26,11 +28,19 @@ cmake \
 -DDEFAULT_CHARSET=utf8 \
 -DDEFAULT_COLLATION=utf8_general_ci \
 -DLOWER_CASE_TABLE_NAMES=1
+
+cmake . -DCMAKE_INSTALL_PREFIX=/usr/local/mysql \
+-DMYSQL_DATADIR=/var/lib/mysql -DSYSCONFDIR=/etc \
+-DWITH_INNOBASE_STORAGE_ENGINE=1 -DWITH_ARCHIVE_STORAGE_ENGINE=1 \
+-DWITH_BLACKHOLE_STORAGE_ENGINE=1 -DWITH_FEDERATED_STORAGE_ENGINE=1 \
+-DWITH_PARTITION_STORAGE_ENGINE=1 -DMYSQL_UNIX_ADDR=/tmp/mysqld.sock \
+-DENABLED_LOCAL_INFILE=1 -DWITH_EXTRA_CHARSETS=all \
+-DMYSQL_USER=mysql -DDOWNLOAD_BOOST=1 -DWITH_BOOST=/usr/local/boost_1_59_0
 make && make install
 #mv /etc/my.cnf if exists it will be failure
 mv /etc/my.cnf /etc/my.cnfbk
 #install mysqldb and start mysql server
-/usr/local/mysql/scripts/mysql_install_db --basedir=/usr/local/mysql --datadir=/home/mysql/data --user=mysql
+/usr/local/mysql/scripts/mysql_install_db --basedir=/usr/local/mysql --datadir=/mysql/data --user=mysql
 cp /usr/local/mysql/support-files/mysql.server /etc/init.d/mysql
 chkconfig mysql on
 service mysql start
