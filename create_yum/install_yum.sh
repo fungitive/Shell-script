@@ -2,7 +2,7 @@
 echo -e '\e[31mInstallation tools and dependencies\e[0m'
 yum install -y wget make cmake gcc gcc-c++  &&\
 yum install -y pcre-devel lib zlib-devel  \
-    openssl openssl-devel
+    openssl openssl-devel createrepo yum-util
 if [ $? -eq 0 ];then
     echo -e '\e[32mSuccessful!\e[0m'
 else
@@ -21,6 +21,7 @@ else
     exit 0
 fi
 echo -e '\e[31mStart nginx\e[0m'
-/usr/local/nginx/sbin/nginx
 firewall-cmd --zone=public --permanent --add-port=80/tcp && firewall-cmd --reload
+/usr/local/nginx/sbin/nginx
 echo -e '\e[32mSuccessful!\e[0m'
+

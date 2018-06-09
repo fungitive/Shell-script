@@ -1,0 +1,21 @@
+server{
+   listen       80;
+   server_name  _;
+
+   index index.php;
+   root /usr/share/zabbix/;
+
+   location ~* \.(js|css|png|jpg|jpeg|gif|ico)$ {
+       expires 30d;
+   }
+
+   location ~* \.php$ {
+       fastcgi_pass   127.0.0.1:9000;
+       fastcgi_index  index.php;
+       fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;
+       fastcgi_buffer_size 128k;
+       fastcgi_buffers 4 256k;
+       fastcgi_busy_buffers_size 256k;
+       include        fastcgi_params;
+   }
+}
