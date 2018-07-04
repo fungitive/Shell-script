@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 echo -e '\e[31mInstallation tools and dependencies\e[0m'
-yum install -y wget make cmake gcc gcc-c++  &&\
+yum install -y wget make cmake gcc gcc-c++
 yum install -y pcre-devel lib zlib-devel  \
     openssl openssl-devel
 if [ $? -eq 0 ];then
