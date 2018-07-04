@@ -1,0 +1,3 @@
+base:
+  'feiyu':
+    - nginx.install
