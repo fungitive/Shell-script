@@ -1,2 +1,2 @@
 # SHELL-edit
-存储自己编写的一些shell脚本
+整理和收藏一些shell脚本
