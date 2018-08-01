@@ -28,8 +28,8 @@ install_batch() {
 Start：batch
 
 Instructions for use: batch ssh operations based on the /etc/hosts file and free login
-Support for grouping hosts in /etc/hosts, need to modify the script
-Supports the disablement of commands such as rm to prevent batch operations from affecting the script. You need to modify the script."
+Support for grouping hosts in /etc/hosts, need to modify the soft_install
+Supports the disablement of commands such as rm to prevent batch operations from affecting the soft_install. You need to modify the soft_install."
 	fi
 }
 
@@ -55,7 +55,7 @@ info_batch() {
 
 Version：1.2
 
-Introduce：Springboard batch operation script
+Introduce：Springboard batch operation soft_install
 
 Type: System Management
 

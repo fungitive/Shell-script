@@ -1,6 +1,5 @@
+#!/usr/bin/env bash
 #system组 系统，返回各种系统信息
-
-
 
 #系统和版本
 system_version_two() {

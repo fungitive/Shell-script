@@ -35,7 +35,7 @@ install_redis() {
     #测试
     source /etc/profile
     which redis-cli
-    [ $? -eq 0 ] || test_exit "Installation failed, please check the script" 
+    [ $? -eq 0 ] || test_exit "Installation failed, please check the soft_install"
 
     clear
 	echo "redis" >> conf/installed.txt

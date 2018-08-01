@@ -25,7 +25,7 @@ install_ruby() {
 	
 	#测试
 	rvm use 2.4.1 --default
-	[ $? -eq 0 ] || test_exit "ruby安装失败，请检查脚本" "Ruby installation failed, please check the script"
+	[ $? -eq 0 ] || test_exit "ruby安装失败，请检查脚本" "Ruby installation failed, please check the soft_install"
     
     clear
 	echo "ruby" >> conf/installed.txt

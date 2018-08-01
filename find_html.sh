@@ -1,4 +1,4 @@
-#！、bin/bash
+#!/bin/bash
 #方法1：
 find . -name "*.html" -maxdepth 1 -exec du -b {} \; |awk '{sum+=$1}END{print sum}'
 #方法2：

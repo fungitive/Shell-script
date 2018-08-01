@@ -27,9 +27,9 @@ install_notty() {
 
 Start：notty
 
-Modify: modify the number of failures, please edit the script file
+Modify: modify the number of failures, please edit the soft_install file
 
-Recommendation: It is recommended to add the script to the crontab"
+Recommendation: It is recommended to add the soft_install to the crontab"
 	fi
 }
 

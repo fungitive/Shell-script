@@ -2,6 +2,7 @@
 #CPU使用情况
 DATE=$(date +%F" "%H:%M)
 IP=$(ifconfig eth0 |awk -F '[ :]+' '/inet addr/{print $4}')  # 只支持CentOS6
+#IP=$(hostname -I |awk '{ print $1}') #支持centos7
 MAIL="example@mail.com"
 if ! which vmstat &>/dev/null; then
     echo "vmstat command no found, Please install procps package." 

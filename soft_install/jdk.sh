@@ -36,7 +36,7 @@ install_jdk() {
     
     #测试
     java -version
-    [ $? -eq 0 ] || test_exit "安装失败，请检查脚本" "Installation failed, please check the script"
+    [ $? -eq 0 ] || test_exit "安装失败，请检查脚本" "Installation failed, please check the soft_install"
 
     clear
 	echo "jdk" >> conf/installed.txt

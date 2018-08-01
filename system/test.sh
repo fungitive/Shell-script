@@ -28,7 +28,7 @@ test_64bit(){
 #测试是否是root
 test_root(){
     if [[ $EUID -ne 0 ]]; then
-        test_exit "This script must be run as root"
+        test_exit "This soft_install must be run as root"
     fi
 }
 
@@ -61,7 +61,7 @@ test_dir() {
     
     [[ ! -d ${log_dir}/$1 ]] &&  mkdir -p ${log_dir}/$1
 
-    [[ -d ${install_dir}/$1 ]] && test_exit "${install_dir}/${1}目录已经存在，请检查安装脚本路径或手动删除目录" "${install_dir}/${1} directory already exists, please check the installation script path or manually delete the directory"
+    [[ -d ${install_dir}/$1 ]] && test_exit "${install_dir}/${1}目录已经存在，请检查安装脚本路径或手动删除目录" "${install_dir}/${1} directory already exists, please check the installation soft_install path or manually delete the directory"
 }
 
 
@@ -122,7 +122,7 @@ test_rely() {
 			if [ $? -eq 0 ];then
 				[ "$language" == "cn" ] && echo "依赖${i}安装成功" || echo "Depends on ${i} installed successfully"
 			else
-				[ "$language" == "cn" ] && echo "依赖${i}安装失败，请检查脚本" || echo "Depends on ${i} installation failed, check script"
+				[ "$language" == "cn" ] && echo "依赖${i}安装失败，请检查脚本" || echo "Depends on ${i} installation failed, check soft_install"
 			fi
 		fi
 	done
